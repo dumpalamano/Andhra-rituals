@@ -1,32 +1,33 @@
-# 🪔 Telugu Family Traditions Tracker
+# Home Longevity, Tendon & Arm Strength Routine
 
-An interactive tracker of daily, weekly, and festival traditions for a **multi-generational South Indian Telugu Hindu family** from Southern Andhra Pradesh.
+An interactive workout tracker for a **3-day-per-week home program** focused on tendon health, postural strength, and arm development.
+
+## Program Overview
+
+- **Frequency:** 3 sessions per week — alternate Workout A and Workout B
+- **Format:** Standing and weighted movements first, then floor work (pack/unpack setup)
+- **Tempo:** 3-second lowering phase on all movements
+- **Progression:** Increase dumbbell weight when reps feel easy at the current range
+
+## Workouts
+
+### Workout A — Postural Pillars, Hips & Biceps
+Wall Tibialis Raises · Romanian Deadlifts · Goblet Box Squats · Hammer Curls · Farmer's Carries
+
+### Workout B — Balance, Knee Tracking, Triceps & Shoulders
+Single-Leg Balance · Lunge with Heel Raise · Lateral Raises · Skull Crushers · Band Hip Abduction · Single-Leg Bridge
 
 ## Features
 
-- ✅ 20 authentic traditions — daily rituals, weekly customs, monthly rituals
-- 🎉 Click any card to mark a tradition as adopted (with confetti!)
-- 📊 Progress bar tracking how many traditions your family has embraced
-- 🔍 Filter by: Daily, Weekly, Pooja, Kitchen, Elders
-- 🌺 Festival panel covering Sankranti, Ugadi, Ganesh Chaturthi, Dasara, Deepavali & Sathyanarayana Swamy Pooja
-- 💾 Progress saved in browser localStorage
-- 📱 Fully responsive — works on mobile and desktop
-
-## Traditions Included
-
-**Daily (రోజువారీ)**
-- Suprabhata Pooja · Kolam · Tulasi Pooja · Naivedyam · Evening Deepam · Aasheervadham · Sloka Recitation · Ramayanam Parayanam
-
-**Weekly (వారానికొకసారి)**
-- Friday Lakshmi Pooja · Saturday Hanuman Pooja · Sunday Family Cook · Grandfather's Stories · Panchangam Reading · Temple Visit · Carnatic Sangeetham · Garland Making · Pasupu-Kumkuma
-
-**Monthly (నెలవారీ)**
-- Ekadashi Vrat · Amavasya Tharpanam · Sathyanarayana Swamy Katha
-
-## Live Site
-
-🌐 [View on GitHub Pages](https://YOUR-USERNAME.github.io/telugu-family-traditions/)
+- Alternate A/B session tracking with suggested next workout
+- Per-set checkboxes for every exercise (including left/right sides)
+- Phase-based layout with setup and teardown reminders
+- Session progress bar and completion logging
+- Progress saved in browser localStorage
+- Fully responsive — works on mobile and desktop
 
 ## Usage
 
-Simply open `index.html` in a browser — no build steps, no dependencies. All fonts load from Google Fonts.
+Open `index.html` in a browser — no build steps, no dependencies.
+
+The original [Telugu Family Traditions Tracker](traditions.html) is also included in this repo.
