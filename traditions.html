@@ -1,0 +1,700 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Telugu Family Traditions</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Nunito:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --saffron: #e8701a;
+    --turmeric: #d4a017;
+    --kumkum: #c0392b;
+    --lotus: #e8a0b0;
+    --forest: #2e6b3e;
+    --deep-red: #8b1a1a;
+    --cream: #fdf6e3;
+    --warm: #f5e6c8;
+    --parchment: #fffbf0;
+    --ink: #1c0f05;
+    --muted: #7a6045;
+    --card: #fffdf5;
+    --border: #e8d5aa;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    background: var(--cream);
+    font-family: 'Nunito', sans-serif;
+    color: var(--ink);
+    min-height: 100vh;
+  }
+
+  /* Kolam-inspired background pattern */
+  body::before {
+    content: '';
+    position: fixed;
+    inset: 0;
+    background-image:
+      radial-gradient(circle at 25% 25%, rgba(212,160,23,0.06) 0%, transparent 50%),
+      radial-gradient(circle at 75% 75%, rgba(232,112,26,0.05) 0%, transparent 50%);
+    pointer-events: none;
+    z-index: 0;
+  }
+
+  /* Decorative top border */
+  .temple-border {
+    height: 8px;
+    background: linear-gradient(90deg, var(--kumkum), var(--saffron), var(--turmeric), var(--saffron), var(--kumkum));
+    position: relative;
+  }
+
+  .temple-border::after {
+    content: '🪔 ॐ 🪔 ॐ 🪔 ॐ 🪔 ॐ 🪔';
+    position: absolute;
+    bottom: -28px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 14px;
+    letter-spacing: 0.5em;
+    color: var(--turmeric);
+    white-space: nowrap;
+    opacity: 0.6;
+  }
+
+  .container {
+    max-width: 960px;
+    margin: 0 auto;
+    padding: 60px 24px 80px;
+    position: relative;
+    z-index: 1;
+  }
+
+  header {
+    text-align: center;
+    margin-bottom: 52px;
+    animation: fadeUp 0.8s ease both;
+  }
+
+  .telugu-title {
+    font-size: 13px;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    color: var(--saffron);
+    font-weight: 600;
+    margin-bottom: 8px;
+  }
+
+  .telugu-sub {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 15px;
+    color: var(--turmeric);
+    font-style: italic;
+    margin-bottom: 14px;
+    letter-spacing: 0.05em;
+  }
+
+  h1 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(2.2rem, 5.5vw, 3.8rem);
+    line-height: 1.1;
+    color: var(--ink);
+    margin-bottom: 14px;
+  }
+
+  h1 em {
+    font-style: italic;
+    color: var(--kumkum);
+  }
+
+  .header-desc {
+    font-size: 14px;
+    color: var(--muted);
+    font-weight: 400;
+    max-width: 520px;
+    margin: 0 auto;
+    line-height: 1.8;
+  }
+
+  .diyas {
+    font-size: 24px;
+    letter-spacing: 0.3em;
+    margin: 16px 0 8px;
+  }
+
+  /* Filters */
+  .filters {
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-bottom: 36px;
+    animation: fadeUp 0.8s 0.1s ease both;
+  }
+
+  .filter-btn {
+    border: 1.5px solid var(--border);
+    background: var(--card);
+    color: var(--muted);
+    padding: 8px 18px;
+    border-radius: 100px;
+    font-family: 'Nunito', sans-serif;
+    font-size: 13px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s;
+  }
+
+  .filter-btn:hover { border-color: var(--saffron); color: var(--saffron); }
+  .filter-btn.active { background: var(--saffron); border-color: var(--saffron); color: white; }
+
+  /* Progress */
+  .progress-wrap {
+    background: linear-gradient(135deg, var(--warm), #fdefd0);
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    padding: 20px 26px;
+    margin-bottom: 36px;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    animation: fadeUp 0.8s 0.15s ease both;
+  }
+
+  .progress-icon { font-size: 24px; }
+
+  .progress-text { flex: 1; }
+  .progress-label { font-size: 11px; letter-spacing: 0.2em; text-transform: uppercase; color: var(--muted); font-weight: 600; margin-bottom: 6px; }
+
+  .progress-bar { height: 7px; background: rgba(0,0,0,0.08); border-radius: 99px; overflow: hidden; }
+  .progress-fill { height: 100%; background: linear-gradient(90deg, var(--kumkum), var(--saffron), var(--turmeric)); border-radius: 99px; transition: width 0.5s ease; }
+
+  .progress-count { font-family: 'Cormorant Garamond', serif; font-size: 22px; color: var(--kumkum); font-weight: 700; white-space: nowrap; }
+
+  /* Section labels */
+  .section-label {
+    font-size: 11px;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    color: var(--saffron);
+    font-weight: 700;
+    margin: 44px 0 18px;
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    animation: fadeUp 0.6s ease both;
+  }
+
+  .section-label .s-icon { font-size: 18px; }
+
+  .section-label::after {
+    content: '';
+    flex: 1;
+    height: 1px;
+    background: linear-gradient(90deg, var(--border), transparent);
+  }
+
+  /* Cards grid */
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(270px, 1fr));
+    gap: 18px;
+  }
+
+  .card {
+    background: var(--card);
+    border-radius: 14px;
+    border: 1.5px solid var(--border);
+    padding: 22px;
+    cursor: pointer;
+    transition: all 0.25s;
+    position: relative;
+    overflow: hidden;
+    animation: fadeUp 0.5s ease both;
+  }
+
+  .card::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 4px;
+    background: linear-gradient(90deg, var(--kumkum), var(--saffron), var(--turmeric));
+    opacity: 0;
+    transition: opacity 0.2s;
+  }
+
+  /* Rangoli corner decoration */
+  .card::after {
+    content: '✦';
+    position: absolute;
+    bottom: 10px; right: 12px;
+    font-size: 10px;
+    color: var(--border);
+    transition: color 0.2s;
+  }
+
+  .card:hover { transform: translateY(-4px); box-shadow: 0 14px 36px rgba(140,60,0,0.1); border-color: rgba(232,112,26,0.3); }
+  .card:hover::before { opacity: 1; }
+  .card:hover::after { color: var(--turmeric); }
+  .card.done { border-color: var(--forest); background: #f8fff9; }
+  .card.done::before { background: var(--forest); opacity: 1; }
+  .card.done::after { color: var(--forest); content: '✓'; }
+
+  .card-header { display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 12px; }
+  .card-icon { font-size: 30px; line-height: 1; }
+
+  .check-circle {
+    width: 24px; height: 24px;
+    border-radius: 50%;
+    border: 2px solid var(--border);
+    display: flex; align-items: center; justify-content: center;
+    flex-shrink: 0;
+    transition: all 0.2s;
+    font-size: 12px;
+    color: white;
+  }
+
+  .card.done .check-circle { background: var(--forest); border-color: var(--forest); }
+
+  .card-freq {
+    display: inline-block;
+    font-size: 10px;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    font-weight: 700;
+    color: var(--saffron);
+    margin-bottom: 5px;
+  }
+
+  .card-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 18px;
+    line-height: 1.25;
+    color: var(--ink);
+    margin-bottom: 8px;
+    font-weight: 600;
+  }
+
+  .card-telugu {
+    font-size: 11px;
+    color: var(--turmeric);
+    font-style: italic;
+    margin-bottom: 8px;
+    font-weight: 500;
+  }
+
+  .card-desc {
+    font-size: 13px;
+    color: var(--muted);
+    line-height: 1.65;
+    font-weight: 400;
+  }
+
+  .card-tag {
+    display: inline-block;
+    margin-top: 14px;
+    font-size: 11px;
+    padding: 3px 10px;
+    border-radius: 100px;
+    background: var(--warm);
+    color: var(--muted);
+    font-weight: 600;
+  }
+
+  /* Festival banner */
+  .festival-section {
+    background: linear-gradient(135deg, #2e0a0a, #5c1a00);
+    border-radius: 18px;
+    padding: 32px 28px;
+    margin-top: 48px;
+    color: white;
+    position: relative;
+    overflow: hidden;
+    animation: fadeUp 0.6s ease both;
+  }
+
+  .festival-section::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(ellipse at top right, rgba(212,160,23,0.2), transparent 60%);
+    pointer-events: none;
+  }
+
+  .festival-header {
+    text-align: center;
+    margin-bottom: 28px;
+  }
+
+  .festival-header h2 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.8rem;
+    font-style: italic;
+    color: var(--turmeric);
+    margin-bottom: 6px;
+  }
+
+  .festival-header p {
+    font-size: 12px;
+    color: rgba(255,255,255,0.5);
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+  }
+
+  .festival-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+    gap: 16px;
+  }
+
+  .festival-card {
+    background: rgba(255,255,255,0.07);
+    border: 1px solid rgba(212,160,23,0.25);
+    border-radius: 12px;
+    padding: 18px;
+    transition: background 0.2s;
+  }
+
+  .festival-card:hover { background: rgba(255,255,255,0.12); }
+
+  .fest-icon { font-size: 26px; margin-bottom: 8px; }
+  .fest-name { font-family: 'Cormorant Garamond', serif; font-size: 16px; color: var(--turmeric); font-weight: 600; margin-bottom: 4px; }
+  .fest-telugu { font-size: 11px; color: rgba(212,160,23,0.6); font-style: italic; margin-bottom: 8px; }
+  .fest-desc { font-size: 12px; color: rgba(255,255,255,0.65); line-height: 1.6; }
+
+  /* Celebrate banner */
+  .celebrate-banner {
+    display: none;
+    text-align: center;
+    padding: 24px;
+    background: linear-gradient(135deg, var(--deep-red), var(--saffron));
+    color: white;
+    border-radius: 14px;
+    margin-top: 32px;
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.3rem;
+    font-style: italic;
+    animation: fadeUp 0.5s ease;
+  }
+
+  /* Confetti */
+  @keyframes confettiDrop {
+    0% { transform: translateY(-10px) rotate(0deg); opacity: 1; }
+    100% { transform: translateY(100vh) rotate(720deg); opacity: 0; }
+  }
+  .confetti-piece {
+    position: fixed;
+    width: 8px; height: 8px;
+    border-radius: 2px;
+    animation: confettiDrop 2s ease forwards;
+    pointer-events: none;
+    z-index: 999;
+  }
+
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(18px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  /* Floating diya animation */
+  @keyframes flicker {
+    0%, 100% { opacity: 1; transform: scale(1); }
+    50% { opacity: 0.85; transform: scale(1.05); }
+  }
+  .flicker { display: inline-block; animation: flicker 2s ease-in-out infinite; }
+</style>
+</head>
+<body>
+
+<div class="temple-border"></div>
+
+<div class="container">
+  <header>
+    <p class="telugu-title">ఆంధ్రప్రదేశ్ · Telugu Hindu Family</p>
+    <p class="telugu-sub">Southern Andhra Pradesh · Multi-Generational Traditions</p>
+    <div class="diyas"><span class="flicker">🪔</span> <span class="flicker" style="animation-delay:0.3s">🌺</span> <span class="flicker" style="animation-delay:0.6s">🪔</span></div>
+    <h1>Our Family <em>Aacharam</em><br>& Daily Rituals</h1>
+    <p class="header-desc">The sacred customs of a Southern Andhra household — from morning kolam to evening deepam, woven through every generation.</p>
+  </header>
+
+  <div class="filters">
+    <button class="filter-btn active" onclick="filter('all',event)">అన్నీ · All</button>
+    <button class="filter-btn" onclick="filter('daily',event)">Daily · రోజువారీ</button>
+    <button class="filter-btn" onclick="filter('weekly',event)">Weekly · వారానికి</button>
+    <button class="filter-btn" onclick="filter('pooja',event)">Pooja · పూజ</button>
+    <button class="filter-btn" onclick="filter('kitchen',event)">Kitchen · వంటిల్లు</button>
+    <button class="filter-btn" onclick="filter('elders',event)">Elders · పెద్దలు</button>
+  </div>
+
+  <div class="progress-wrap">
+    <div class="progress-icon">🏮</div>
+    <div class="progress-text">
+      <div class="progress-label">Traditions Adopted · ఆచారాలు పాటించేవి</div>
+      <div class="progress-bar"><div class="progress-fill" id="progressFill" style="width:0%"></div></div>
+    </div>
+    <span class="progress-count" id="progressCount">0 / 20</span>
+  </div>
+
+  <div id="traditionsContainer"></div>
+
+  <div class="celebrate-banner" id="celebrateBanner">
+    🪔 శుభమస్తు — Your home is a temple of tradition. May your family's light burn bright for generations! 🪔
+  </div>
+</div>
+
+<script>
+const traditions = [
+  // ─── DAILY ────────────────────────────────────────────────────────────────
+  {
+    id:1, freq:'daily', icon:'🌅', filters:['all','daily','pooja'],
+    title:'Suprabhata Pooja', telugu:'సుప్రభాత పూజ',
+    tag:'Morning Ritual',
+    desc:'Before sunrise, the elder woman of the house wakes first, lights the lamp at the pooja room, rings the bell, and chants Suprabhata slokas. Children join after bath. The day does not start without this.'
+  },
+  {
+    id:2, freq:'daily', icon:'🌸', filters:['all','daily'],
+    title:'Kolam at the Threshold', telugu:'ముగ్గు',
+    tag:'Women\'s Tradition',
+    desc:'Every morning, the women of the household draw a fresh kolam at the front door with rice flour. On festival days it is expanded with colour. Children learn the basic dots-and-lines patterns from grandmothers.'
+  },
+  {
+    id:3, freq:'daily', icon:'🪔', filters:['all','daily','pooja'],
+    title:'Evening Deepam — Sandhyavandanam', telugu:'సంధ్యా దీపం',
+    tag:'All Generations',
+    desc:'At dusk, a ghee lamp is lit in the pooja room and at the tulsi kota. The family gathers to sing "Deepam Jyoti" and offer the day\'s last prayer. Elders lead; grandchildren hold the lamp.'
+  },
+  {
+    id:4, freq:'daily', icon:'🌿', filters:['all','daily','pooja'],
+    title:'Tulasi Pooja', telugu:'తులసి పూజ',
+    tag:'Sacred Plant Ritual',
+    desc:'The Tulasi plant (Holy Basil) in the courtyard is watered and worshipped each morning by the women of the house. Married women offer kumkum, haldi, and a small flower garland while circumambulating it.'
+  },
+  {
+    id:5, freq:'daily', icon:'🍚', filters:['all','daily','kitchen'],
+    title:'Naivedyam Before First Meal', telugu:'నైవేద్యం',
+    tag:'Kitchen Tradition',
+    desc:'The first portion of every cooked meal is offered to God in the pooja room (Naivedyam) before anyone eats. Grandmothers set a small banana leaf with rice and curry. Only then does the family sit to eat.'
+  },
+  {
+    id:6, freq:'daily', icon:'👵', filters:['all','daily','elders'],
+    title:'Aasheervadham — Elder\'s Blessing', telugu:'ఆశీర్వాదం',
+    tag:'Intergenerational',
+    desc:'Children touch the feet of grandparents and parents every morning and before leaving the house. Elders place their hand on the child\'s head and bless them. A tradition non-negotiable in a Southern Andhra home.'
+  },
+  {
+    id:7, freq:'daily', icon:'📿', filters:['all','daily','pooja'],
+    title:'Sloka Recitation at Dusk', telugu:'శ్లోకాలు',
+    tag:'All Children',
+    desc:'Children sit with grandparents and recite slokas — Vishnu Sahasranamam, Hanuman Chalisa, or Lalitha Sahasranamam stanzas — for 10-15 minutes before dinner. This is how the oral tradition is preserved.'
+  },
+
+  // ─── WEEKLY ───────────────────────────────────────────────────────────────
+  {
+    id:8, freq:'weekly', icon:'🌕', filters:['all','weekly','pooja'],
+    title:'Ekadashi Vrat', telugu:'ఏకాదశి వ్రతం',
+    tag:'Twice Monthly',
+    desc:'On the 11th day of each lunar fortnight, elders observe fasting (or a fruit/milk diet). The family reads Vishnu Puranam together in the evening. Children participate by staying vegetarian and listening to stories of Lord Vishnu.'
+  },
+  {
+    id:9, freq:'weekly', icon:'🐒', filters:['all','weekly','pooja'],
+    title:'Saturday Hanuman Pooja', telugu:'శనివారం హనుమాన్ పూజ',
+    tag:'Weekly Ritual',
+    desc:'Saturday is Hanuman\'s day. The family visits the nearby Anjaneya temple or performs Hanuman Chalisa recitation at home. Elders distribute vada, banana prasadam to neighbourhood children.'
+  },
+  {
+    id:10, freq:'weekly', icon:'🌼', filters:['all','weekly','pooja'],
+    title:'Friday Lakshmi Pooja', telugu:'శుక్రవారం లక్ష్మి పూజ',
+    tag:'Women\'s Ritual',
+    desc:'Friday is sacred to Goddess Lakshmi. Married women perform Vara Lakshmi pooja — decorating the kalasha, offering turmeric garlands, reciting Lakshmi Ashtottaram. Daughters are taught each step by their mothers.'
+  },
+  {
+    id:11, freq:'weekly', icon:'🍛', filters:['all','weekly','kitchen'],
+    title:'Sunday Inti Vanta — Family Cook', telugu:'ఇంటి వంట',
+    tag:'Kitchen Tradition',
+    desc:'Sunday is the day for elaborate cooking together. Grandmother supervises pesarattu, pulihora, or gongura pachadi. Daughters-in-law learn; grandchildren grind the chutney on the old ammikallu (stone grinder).'
+  },
+  {
+    id:12, freq:'weekly', icon:'👴', filters:['all','weekly','elders'],
+    title:'Grandfather\'s Story Hour', telugu:'తాతయ్య కథలు',
+    tag:'Oral Tradition',
+    desc:'After Sunday lunch, the grandfather gathers grandchildren and tells one Panchatantra, Ramayana, or Mahabharata story from memory. Children ask questions; the story is discussed across generations at the table.'
+  },
+  {
+    id:13, freq:'weekly', icon:'🌾', filters:['all','weekly','elders'],
+    title:'Weekly Astrology Reading', telugu:'వారఫలం',
+    tag:'Elder\'s Tradition',
+    desc:'Elders read the weekly horoscope (varaphalam) from a Telugu almanac (panchangam) on Sunday morning. They explain auspicious times for the week. Children learn the concept of muhurtham and its significance.'
+  },
+  {
+    id:14, freq:'weekly', icon:'🛕', filters:['all','weekly','pooja'],
+    title:'Temple Visit — Devasthanam', telugu:'దేవస్థానం దర్శనం',
+    tag:'Family Outing',
+    desc:'The whole family walks or drives to the kula deivam (family deity temple) weekly — typically on Tuesday or Friday. Each member carries a coconut or flowers. Elders explain the significance of each deity to grandchildren.'
+  },
+  {
+    id:15, freq:'weekly', icon:'🎶', filters:['all','weekly','elders'],
+    title:'Carnatic Sangeetham Session', telugu:'కర్నాటక సంగీతం',
+    tag:'Cultural Arts',
+    desc:'One evening a week, a grandmother or elder who knows Carnatic music sings Thyagaraja keertanas or Annamacharya sankeertanas. Children hum along; teenagers are enrolled in classes to continue the chain.'
+  },
+
+  // ─── SPECIAL WEEKLY/PERIODIC ──────────────────────────────────────────────
+  {
+    id:16, freq:'monthly', icon:'🌙', filters:['all','weekly','pooja'],
+    title:'Amavasya Pitru Tharpanam', telugu:'అమావాస్య తర్పణం',
+    tag:'Ancestral Ritual',
+    desc:'On the new moon (Amavasya), male elders perform tharpanam — offering of sesame seeds and water to ancestors at the river or at home. Grandchildren watch solemnly; the names of departed family members are spoken aloud.'
+  },
+  {
+    id:17, freq:'monthly', icon:'🥥', filters:['all','weekly','kitchen'],
+    title:'Sathyanarayana Swamy Katha', telugu:'సత్యనారాయణ స్వామి కథ',
+    tag:'Household Pooja',
+    desc:'Performed on the Pournami (full moon) or on auspicious occasions. Priest recites the Katha while all family members sit and listen. Panchamrutam and Prasadam are shared with neighbours. Children learn to tie the banana columns and arrange flowers.'
+  },
+  {
+    id:18, freq:'weekly', icon:'💛', filters:['all','weekly','kitchen'],
+    title:'Pasupu-Kumkuma Exchange', telugu:'పసుపు కుంకుమ',
+    tag:'Women\'s Bond',
+    desc:'Married women of the household and neighbourhood exchange turmeric and kumkum on auspicious weekday evenings. Elder women bless younger ones. A deeply social tradition that builds community and teaches daughters its sacred meaning.'
+  },
+  {
+    id:19, freq:'daily', icon:'📖', filters:['all','daily','elders'],
+    title:'Ramayanam Parayanam', telugu:'రామాయణ పారాయణం',
+    tag:'Sacred Reading',
+    desc:'The Valmiki Ramayanam or Molla Ramayanam is read aloud for 15 minutes each evening by the eldest family member. During Karthika masam (Nov–Dec), this becomes a daily non-negotiable ritual.'
+  },
+  {
+    id:20, freq:'weekly', icon:'🌺', filters:['all','weekly','pooja'],
+    title:'Garland-Making Together', telugu:'పూల మాల కట్టడం',
+    tag:'Intergenerational',
+    desc:'On pooja days, all women and children sit together to string fresh flowers — jasmine (malle), rose, or chrysanthemum — for the deity. Elders teach the pattern; children learn patience, dexterity, and devotion simultaneously.'
+  },
+];
+
+const festivals = [
+  { icon:'🌾', name:'Sankranti', telugu:'సంక్రాంతి', desc:'The harvest festival of Andhra. Bhogi fires, Haridasu singing, Gobbi games, Kite flying, and Pongal cooking in earthen pots. Elders lead the Bhogi ritual burning old things for renewal.' },
+  { icon:'🌸', name:'Ugadi', telugu:'ఉగాది', desc:'Telugu New Year. The panchangam is read aloud by elders. Ugadi Pachadi is made with six tastes (rasa shadayas) — a metaphor for life\'s mix of joy and sorrow. New clothes for all.' },
+  { icon:'🐘', name:'Ganesh Chaturthi', telugu:'వినాయక చవితి', desc:'Vinayaka idols are installed at home for 1.5 days. Modak and kudumulu are offered. Children carry the idol to the water immersion with procession. Families fast and celebrate together.' },
+  { icon:'🌟', name:'Dasara', telugu:'దసరా', desc:'Saraswati Pooja: books, tools, and instruments are arranged for pooja. Vijayadasami: new ventures begin on this day. Grandmothers apply kumkum to every tool in the house. Children start new learning.' },
+  { icon:'🪔', name:'Deepavali', telugu:'దీపావళి', desc:'The family makes Deepavali Murukku and Laddu at home. Elders wake children before dawn for Abhyanga Snanam (oil bath). Every room and threshold is lit with earthen diyas from dusk to midnight.' },
+  { icon:'🙏', name:'Sathyanarayana Swamy Pooja', telugu:'సత్యనారాయణ స్వామి పూజ', desc:'Performed on auspicious occasions: new home, family milestones, recovery from illness. The whole extended family gathers. Panchamrutam prasadam is distributed. A priest reads the Katha in full.' },
+];
+
+let activeFilter = 'all';
+let checked = new Set(JSON.parse(localStorage.getItem('telugu_traditions') || '[]'));
+
+function save() { localStorage.setItem('telugu_traditions', JSON.stringify([...checked])); }
+
+function updateProgress() {
+  const total = traditions.length;
+  const done = checked.size;
+  document.getElementById('progressFill').style.width = (done/total*100) + '%';
+  document.getElementById('progressCount').textContent = `${done} / ${total}`;
+  if (done === total) document.getElementById('celebrateBanner').style.display = 'block';
+}
+
+function confetti(x, y) {
+  const colors = ['#e8701a','#d4a017','#c0392b','#2e6b3e','#f5c842','#e8a0b0'];
+  for (let i = 0; i < 14; i++) {
+    const el = document.createElement('div');
+    el.className = 'confetti-piece';
+    const shapes = ['50%','0','30%'];
+    el.style.cssText = `left:${x+(Math.random()-.5)*100}px;top:${y}px;background:${colors[Math.floor(Math.random()*colors.length)]};border-radius:${shapes[Math.floor(Math.random()*3)]};animation-delay:${Math.random()*0.3}s;animation-duration:${1.4+Math.random()}s`;
+    document.body.appendChild(el);
+    setTimeout(() => el.remove(), 2500);
+  }
+}
+
+function toggleCard(id, event) {
+  event.stopPropagation();
+  if (checked.has(id)) checked.delete(id);
+  else { checked.add(id); confetti(event.clientX, event.clientY); }
+  save(); render();
+}
+
+function filter(f, event) {
+  activeFilter = f;
+  document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+  if (event && event.target) event.target.classList.add('active');
+  render();
+}
+
+function renderFestivals() {
+  return `
+    <div class="festival-section">
+      <div class="festival-header">
+        <h2>పండుగలు — The Great Festivals</h2>
+        <p>Six Sacred Celebrations of Southern Andhra</p>
+      </div>
+      <div class="festival-grid">
+        ${festivals.map(f => `
+          <div class="festival-card">
+            <div class="fest-icon">${f.icon}</div>
+            <div class="fest-name">${f.name}</div>
+            <div class="fest-telugu">${f.telugu}</div>
+            <div class="fest-desc">${f.desc}</div>
+          </div>
+        `).join('')}
+      </div>
+    </div>`;
+}
+
+function render() {
+  const container = document.getElementById('traditionsContainer');
+  const visible = traditions.filter(t => t.filters.includes(activeFilter));
+
+  const daily = visible.filter(t => t.freq === 'daily');
+  const weekly = visible.filter(t => t.freq === 'weekly');
+  const monthly = visible.filter(t => t.freq === 'monthly');
+
+  let html = '';
+
+  if (daily.length) {
+    html += `<div class="section-label"><span class="s-icon">🌅</span> Daily Rituals · రోజువారీ ఆచారాలు</div><div class="grid">`;
+    daily.forEach((t, i) => {
+      const done = checked.has(t.id);
+      html += cardHTML(t, done, i);
+    });
+    html += '</div>';
+  }
+
+  if (weekly.length) {
+    html += `<div class="section-label"><span class="s-icon">🛕</span> Weekly Traditions · వారానికొకసారి</div><div class="grid">`;
+    weekly.forEach((t, i) => { html += cardHTML(t, checked.has(t.id), i); });
+    html += '</div>';
+  }
+
+  if (monthly.length) {
+    html += `<div class="section-label"><span class="s-icon">🌕</span> Monthly Rituals · నెలవారీ</div><div class="grid">`;
+    monthly.forEach((t, i) => { html += cardHTML(t, checked.has(t.id), i); });
+    html += '</div>';
+  }
+
+  if (activeFilter === 'all' || activeFilter === 'pooja') {
+    html += renderFestivals();
+  }
+
+  container.innerHTML = html;
+  updateProgress();
+}
+
+function cardHTML(t, done, i) {
+  return `
+    <div class="card ${done ? 'done' : ''}" onclick="toggleCard(${t.id}, event)" style="animation-delay:${i*0.06}s">
+      <div class="card-header">
+        <span class="card-icon">${t.icon}</span>
+        <div class="check-circle">${done ? '✓' : ''}</div>
+      </div>
+      <span class="card-freq">${t.freq}</span>
+      <div class="card-title">${t.title}</div>
+      <div class="card-telugu">${t.telugu}</div>
+      <div class="card-desc">${t.desc}</div>
+      <span class="card-tag">${t.tag}</span>
+    </div>`;
+}
+
+render();
+</script>
+</body>
+</html>

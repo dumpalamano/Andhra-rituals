@@ -3,695 +3,916 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Telugu Family Traditions</title>
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Nunito:wght@300;400;500;600&display=swap" rel="stylesheet">
+<title>Home Longevity & Strength Routine</title>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
 <style>
   :root {
-    --saffron: #e8701a;
-    --turmeric: #d4a017;
-    --kumkum: #c0392b;
-    --lotus: #e8a0b0;
-    --forest: #2e6b3e;
-    --deep-red: #8b1a1a;
-    --cream: #fdf6e3;
-    --warm: #f5e6c8;
-    --parchment: #fffbf0;
-    --ink: #1c0f05;
-    --muted: #7a6045;
-    --card: #fffdf5;
-    --border: #e8d5aa;
+    --ink: #1a2421;
+    --muted: #5c6b66;
+    --sage: #3d6b5a;
+    --sage-light: #e8f2ed;
+    --teal: #2a5f6f;
+    --teal-light: #e6f2f5;
+    --amber: #c47d2a;
+    --amber-light: #faf3e8;
+    --cream: #f7f5f0;
+    --card: #fffcf7;
+    --border: #ddd5c8;
+    --done: #2e7d52;
+    --done-bg: #f0faf4;
+    --phase-a: #3d6b5a;
+    --phase-b: #2a5f6f;
   }
 
   * { margin: 0; padding: 0; box-sizing: border-box; }
 
   body {
     background: var(--cream);
-    font-family: 'Nunito', sans-serif;
+    font-family: 'DM Sans', sans-serif;
     color: var(--ink);
     min-height: 100vh;
+    line-height: 1.5;
   }
 
-  /* Kolam-inspired background pattern */
   body::before {
     content: '';
     position: fixed;
     inset: 0;
-    background-image:
-      radial-gradient(circle at 25% 25%, rgba(212,160,23,0.06) 0%, transparent 50%),
-      radial-gradient(circle at 75% 75%, rgba(232,112,26,0.05) 0%, transparent 50%);
+    background:
+      radial-gradient(circle at 15% 10%, rgba(61,107,90,0.07) 0%, transparent 45%),
+      radial-gradient(circle at 85% 90%, rgba(42,95,111,0.06) 0%, transparent 45%);
     pointer-events: none;
     z-index: 0;
   }
 
-  /* Decorative top border */
-  .temple-border {
-    height: 8px;
-    background: linear-gradient(90deg, var(--kumkum), var(--saffron), var(--turmeric), var(--saffron), var(--kumkum));
-    position: relative;
-  }
-
-  .temple-border::after {
-    content: '🪔 ॐ 🪔 ॐ 🪔 ॐ 🪔 ॐ 🪔';
-    position: absolute;
-    bottom: -28px;
-    left: 50%;
-    transform: translateX(-50%);
-    font-size: 14px;
-    letter-spacing: 0.5em;
-    color: var(--turmeric);
-    white-space: nowrap;
-    opacity: 0.6;
+  .top-bar {
+    height: 5px;
+    background: linear-gradient(90deg, var(--sage), var(--teal), var(--amber));
   }
 
   .container {
-    max-width: 960px;
+    max-width: 920px;
     margin: 0 auto;
-    padding: 60px 24px 80px;
+    padding: 48px 20px 80px;
     position: relative;
     z-index: 1;
   }
 
   header {
     text-align: center;
-    margin-bottom: 52px;
-    animation: fadeUp 0.8s ease both;
+    margin-bottom: 40px;
+    animation: fadeUp 0.7s ease both;
   }
 
-  .telugu-title {
-    font-size: 13px;
-    letter-spacing: 0.25em;
+  .eyebrow {
+    font-size: 11px;
+    letter-spacing: 0.28em;
     text-transform: uppercase;
-    color: var(--saffron);
-    font-weight: 600;
-    margin-bottom: 8px;
-  }
-
-  .telugu-sub {
-    font-family: 'Cormorant Garamond', serif;
-    font-size: 15px;
-    color: var(--turmeric);
-    font-style: italic;
-    margin-bottom: 14px;
-    letter-spacing: 0.05em;
+    color: var(--sage);
+    font-weight: 700;
+    margin-bottom: 10px;
   }
 
   h1 {
-    font-family: 'Cormorant Garamond', serif;
-    font-size: clamp(2.2rem, 5.5vw, 3.8rem);
-    line-height: 1.1;
-    color: var(--ink);
-    margin-bottom: 14px;
+    font-family: 'Instrument Serif', serif;
+    font-size: clamp(2rem, 5vw, 3.2rem);
+    line-height: 1.12;
+    margin-bottom: 12px;
   }
 
-  h1 em {
-    font-style: italic;
-    color: var(--kumkum);
-  }
+  h1 em { font-style: italic; color: var(--teal); }
 
   .header-desc {
     font-size: 14px;
     color: var(--muted);
-    font-weight: 400;
-    max-width: 520px;
+    max-width: 560px;
     margin: 0 auto;
-    line-height: 1.8;
+    line-height: 1.75;
   }
 
-  .diyas {
-    font-size: 24px;
-    letter-spacing: 0.3em;
-    margin: 16px 0 8px;
+  /* Core parameters */
+  .params {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 12px;
+    margin-bottom: 28px;
+    animation: fadeUp 0.7s 0.05s ease both;
   }
 
-  /* Filters */
-  .filters {
+  .param-card {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 16px 18px;
+  }
+
+  .param-label {
+    font-size: 10px;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--muted);
+    font-weight: 700;
+    margin-bottom: 6px;
+  }
+
+  .param-value {
+    font-size: 13px;
+    color: var(--ink);
+    font-weight: 500;
+    line-height: 1.55;
+  }
+
+  /* Workout switcher */
+  .workout-nav {
     display: flex;
-    gap: 8px;
+    gap: 10px;
     flex-wrap: wrap;
     justify-content: center;
-    margin-bottom: 36px;
-    animation: fadeUp 0.8s 0.1s ease both;
+    margin-bottom: 24px;
+    animation: fadeUp 0.7s 0.1s ease both;
   }
 
-  .filter-btn {
+  .workout-btn {
     border: 1.5px solid var(--border);
     background: var(--card);
     color: var(--muted);
-    padding: 8px 18px;
-    border-radius: 100px;
-    font-family: 'Nunito', sans-serif;
-    font-size: 13px;
+    padding: 12px 22px;
+    border-radius: 12px;
+    font-family: inherit;
+    font-size: 14px;
     font-weight: 600;
     cursor: pointer;
     transition: all 0.2s;
+    text-align: left;
+    min-width: 200px;
   }
 
-  .filter-btn:hover { border-color: var(--saffron); color: var(--saffron); }
-  .filter-btn.active { background: var(--saffron); border-color: var(--saffron); color: white; }
+  .workout-btn:hover { border-color: var(--sage); color: var(--sage); }
 
-  /* Progress */
-  .progress-wrap {
-    background: linear-gradient(135deg, var(--warm), #fdefd0);
+  .workout-btn.active-a {
+    background: var(--sage);
+    border-color: var(--sage);
+    color: white;
+  }
+
+  .workout-btn.active-b {
+    background: var(--teal);
+    border-color: var(--teal);
+    color: white;
+  }
+
+  .workout-btn .btn-id {
+    display: block;
+    font-size: 11px;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    opacity: 0.75;
+    margin-bottom: 2px;
+  }
+
+  .workout-btn .btn-title {
+    font-family: 'Instrument Serif', serif;
+    font-size: 16px;
+    font-weight: 400;
+  }
+
+  /* Progress & schedule */
+  .stats-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+    margin-bottom: 28px;
+    animation: fadeUp 0.7s 0.12s ease both;
+  }
+
+  @media (max-width: 560px) {
+    .stats-row { grid-template-columns: 1fr; }
+  }
+
+  .stat-card {
+    background: linear-gradient(135deg, var(--sage-light), #f0f8f4);
     border: 1px solid var(--border);
     border-radius: 14px;
-    padding: 20px 26px;
-    margin-bottom: 36px;
+    padding: 18px 22px;
     display: flex;
     align-items: center;
-    gap: 20px;
-    animation: fadeUp 0.8s 0.15s ease both;
+    gap: 16px;
   }
 
-  .progress-icon { font-size: 24px; }
+  .stat-card.schedule {
+    background: linear-gradient(135deg, var(--teal-light), #eef6f8);
+  }
 
-  .progress-text { flex: 1; }
-  .progress-label { font-size: 11px; letter-spacing: 0.2em; text-transform: uppercase; color: var(--muted); font-weight: 600; margin-bottom: 6px; }
+  .stat-icon { font-size: 26px; }
 
-  .progress-bar { height: 7px; background: rgba(0,0,0,0.08); border-radius: 99px; overflow: hidden; }
-  .progress-fill { height: 100%; background: linear-gradient(90deg, var(--kumkum), var(--saffron), var(--turmeric)); border-radius: 99px; transition: width 0.5s ease; }
+  .stat-body { flex: 1; min-width: 0; }
 
-  .progress-count { font-family: 'Cormorant Garamond', serif; font-size: 22px; color: var(--kumkum); font-weight: 700; white-space: nowrap; }
-
-  /* Section labels */
-  .section-label {
-    font-size: 11px;
-    letter-spacing: 0.3em;
+  .stat-label {
+    font-size: 10px;
+    letter-spacing: 0.18em;
     text-transform: uppercase;
-    color: var(--saffron);
+    color: var(--muted);
     font-weight: 700;
-    margin: 44px 0 18px;
-    display: flex;
-    align-items: center;
-    gap: 14px;
+    margin-bottom: 4px;
+  }
+
+  .stat-value {
+    font-family: 'Instrument Serif', serif;
+    font-size: 20px;
+    color: var(--ink);
+  }
+
+  .stat-sub {
+    font-size: 12px;
+    color: var(--muted);
+    margin-top: 2px;
+  }
+
+  .progress-bar {
+    height: 6px;
+    background: rgba(0,0,0,0.08);
+    border-radius: 99px;
+    overflow: hidden;
+    margin-top: 8px;
+  }
+
+  .progress-fill {
+    height: 100%;
+    background: linear-gradient(90deg, var(--sage), var(--teal));
+    border-radius: 99px;
+    transition: width 0.4s ease;
+  }
+
+  /* Setup banner */
+  .setup-banner {
+    background: var(--amber-light);
+    border: 1px solid #e8d4b0;
+    border-radius: 14px;
+    padding: 18px 22px;
+    margin-bottom: 28px;
     animation: fadeUp 0.6s ease both;
   }
 
-  .section-label .s-icon { font-size: 18px; }
+  .setup-banner h3 {
+    font-size: 11px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--amber);
+    font-weight: 700;
+    margin-bottom: 8px;
+  }
 
-  .section-label::after {
+  .setup-banner p {
+    font-size: 14px;
+    color: var(--ink);
+    line-height: 1.65;
+  }
+
+  /* Phase sections */
+  .phase-header {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    margin: 36px 0 16px;
+    animation: fadeUp 0.5s ease both;
+  }
+
+  .phase-badge {
+    font-size: 10px;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    font-weight: 700;
+    color: white;
+    background: var(--sage);
+    padding: 5px 12px;
+    border-radius: 100px;
+    white-space: nowrap;
+  }
+
+  .phase-header.b .phase-badge { background: var(--teal); }
+
+  .phase-title {
+    font-family: 'Instrument Serif', serif;
+    font-size: 1.35rem;
+    color: var(--ink);
+  }
+
+  .phase-header::after {
     content: '';
     flex: 1;
     height: 1px;
     background: linear-gradient(90deg, var(--border), transparent);
   }
 
-  /* Cards grid */
-  .grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(270px, 1fr));
-    gap: 18px;
-  }
+  /* Exercise cards */
+  .exercise-list { display: flex; flex-direction: column; gap: 14px; }
 
-  .card {
+  .exercise {
     background: var(--card);
-    border-radius: 14px;
     border: 1.5px solid var(--border);
-    padding: 22px;
-    cursor: pointer;
-    transition: all 0.25s;
-    position: relative;
-    overflow: hidden;
+    border-radius: 14px;
+    padding: 20px 22px;
+    transition: border-color 0.2s, background 0.2s;
     animation: fadeUp 0.5s ease both;
   }
 
-  .card::before {
-    content: '';
-    position: absolute;
-    top: 0; left: 0; right: 0;
-    height: 4px;
-    background: linear-gradient(90deg, var(--kumkum), var(--saffron), var(--turmeric));
-    opacity: 0;
-    transition: opacity 0.2s;
+  .exercise.done {
+    border-color: var(--done);
+    background: var(--done-bg);
   }
 
-  /* Rangoli corner decoration */
-  .card::after {
-    content: '✦';
-    position: absolute;
-    bottom: 10px; right: 12px;
-    font-size: 10px;
-    color: var(--border);
-    transition: color 0.2s;
+  .exercise-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 12px;
+    margin-bottom: 10px;
   }
 
-  .card:hover { transform: translateY(-4px); box-shadow: 0 14px 36px rgba(140,60,0,0.1); border-color: rgba(232,112,26,0.3); }
-  .card:hover::before { opacity: 1; }
-  .card:hover::after { color: var(--turmeric); }
-  .card.done { border-color: var(--forest); background: #f8fff9; }
-  .card.done::before { background: var(--forest); opacity: 1; }
-  .card.done::after { color: var(--forest); content: '✓'; }
-
-  .card-header { display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 12px; }
-  .card-icon { font-size: 30px; line-height: 1; }
-
-  .check-circle {
-    width: 24px; height: 24px;
-    border-radius: 50%;
-    border: 2px solid var(--border);
-    display: flex; align-items: center; justify-content: center;
-    flex-shrink: 0;
-    transition: all 0.2s;
-    font-size: 12px;
-    color: white;
-  }
-
-  .card.done .check-circle { background: var(--forest); border-color: var(--forest); }
-
-  .card-freq {
-    display: inline-block;
-    font-size: 10px;
-    letter-spacing: 0.15em;
-    text-transform: uppercase;
+  .exercise-num {
+    font-size: 11px;
     font-weight: 700;
-    color: var(--saffron);
-    margin-bottom: 5px;
+    color: var(--muted);
+    letter-spacing: 0.1em;
+    margin-bottom: 4px;
   }
 
-  .card-title {
-    font-family: 'Cormorant Garamond', serif;
-    font-size: 18px;
-    line-height: 1.25;
-    color: var(--ink);
-    margin-bottom: 8px;
+  .exercise-name {
+    font-family: 'Instrument Serif', serif;
+    font-size: 1.25rem;
+    line-height: 1.2;
+    margin-bottom: 4px;
+  }
+
+  .exercise-target {
+    font-size: 12px;
+    color: var(--sage);
     font-weight: 600;
   }
 
-  .card-telugu {
-    font-size: 11px;
-    color: var(--turmeric);
-    font-style: italic;
-    margin-bottom: 8px;
-    font-weight: 500;
+  .exercise-meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-bottom: 12px;
   }
 
-  .card-desc {
+  .meta-pill {
+    font-size: 11px;
+    font-weight: 600;
+    padding: 4px 10px;
+    border-radius: 100px;
+    background: var(--cream);
+    color: var(--muted);
+    border: 1px solid var(--border);
+  }
+
+  .meta-pill.tempo {
+    background: #fff8eb;
+    color: var(--amber);
+    border-color: #ecd9b8;
+  }
+
+  .exercise-notes {
     font-size: 13px;
     color: var(--muted);
-    line-height: 1.65;
-    font-weight: 400;
+    line-height: 1.6;
+    margin-bottom: 14px;
   }
 
-  .card-tag {
-    display: inline-block;
-    margin-top: 14px;
+  .sets-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    align-items: center;
+  }
+
+  .sets-label {
     font-size: 11px;
-    padding: 3px 10px;
-    border-radius: 100px;
-    background: var(--warm);
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
     color: var(--muted);
-    font-weight: 600;
+    margin-right: 4px;
   }
 
-  /* Festival banner */
-  .festival-section {
-    background: linear-gradient(135deg, #2e0a0a, #5c1a00);
-    border-radius: 18px;
-    padding: 32px 28px;
-    margin-top: 48px;
-    color: white;
-    position: relative;
-    overflow: hidden;
-    animation: fadeUp 0.6s ease both;
-  }
-
-  .festival-section::before {
-    content: '';
-    position: absolute;
-    inset: 0;
-    background: radial-gradient(ellipse at top right, rgba(212,160,23,0.2), transparent 60%);
-    pointer-events: none;
-  }
-
-  .festival-header {
-    text-align: center;
-    margin-bottom: 28px;
-  }
-
-  .festival-header h2 {
-    font-family: 'Cormorant Garamond', serif;
-    font-size: 1.8rem;
-    font-style: italic;
-    color: var(--turmeric);
-    margin-bottom: 6px;
-  }
-
-  .festival-header p {
+  .set-btn {
+    border: 1.5px solid var(--border);
+    background: white;
+    color: var(--ink);
+    padding: 7px 14px;
+    border-radius: 8px;
+    font-family: inherit;
     font-size: 12px;
-    color: rgba(255,255,255,0.5);
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.15s;
+    min-width: 72px;
+  }
+
+  .set-btn:hover { border-color: var(--sage); color: var(--sage); }
+
+  .set-btn.done {
+    background: var(--done);
+    border-color: var(--done);
+    color: white;
+  }
+
+  /* Teardown callout */
+  .teardown {
+    background: linear-gradient(135deg, #f5f0ea, var(--cream));
+    border: 1px dashed var(--border);
+    border-radius: 12px;
+    padding: 16px 20px;
+    margin: 20px 0 8px;
+    font-size: 13px;
+    color: var(--muted);
+    display: flex;
+    gap: 12px;
+    align-items: flex-start;
+  }
+
+  .teardown-icon { font-size: 18px; flex-shrink: 0; }
+
+  .teardown strong {
+    display: block;
+    color: var(--ink);
+    font-size: 11px;
     letter-spacing: 0.15em;
     text-transform: uppercase;
+    margin-bottom: 4px;
   }
 
-  .festival-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
-    gap: 16px;
+  /* Actions */
+  .actions {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-top: 36px;
+    animation: fadeUp 0.5s ease both;
   }
 
-  .festival-card {
-    background: rgba(255,255,255,0.07);
-    border: 1px solid rgba(212,160,23,0.25);
-    border-radius: 12px;
-    padding: 18px;
-    transition: background 0.2s;
+  .action-btn {
+    border: none;
+    padding: 12px 24px;
+    border-radius: 10px;
+    font-family: inherit;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s;
   }
 
-  .festival-card:hover { background: rgba(255,255,255,0.12); }
+  .action-btn.primary {
+    background: var(--sage);
+    color: white;
+  }
 
-  .fest-icon { font-size: 26px; margin-bottom: 8px; }
-  .fest-name { font-family: 'Cormorant Garamond', serif; font-size: 16px; color: var(--turmeric); font-weight: 600; margin-bottom: 4px; }
-  .fest-telugu { font-size: 11px; color: rgba(212,160,23,0.6); font-style: italic; margin-bottom: 8px; }
-  .fest-desc { font-size: 12px; color: rgba(255,255,255,0.65); line-height: 1.6; }
+  .action-btn.primary:hover { background: #325a4b; }
 
-  /* Celebrate banner */
-  .celebrate-banner {
+  .action-btn.secondary {
+    background: white;
+    color: var(--muted);
+    border: 1.5px solid var(--border);
+  }
+
+  .action-btn.secondary:hover { border-color: var(--sage); color: var(--sage); }
+
+  .complete-banner {
     display: none;
     text-align: center;
-    padding: 24px;
-    background: linear-gradient(135deg, var(--deep-red), var(--saffron));
+    padding: 28px;
+    background: linear-gradient(135deg, var(--sage), var(--teal));
     color: white;
-    border-radius: 14px;
-    margin-top: 32px;
-    font-family: 'Cormorant Garamond', serif;
-    font-size: 1.3rem;
-    font-style: italic;
+    border-radius: 16px;
+    margin-top: 28px;
     animation: fadeUp 0.5s ease;
   }
 
-  /* Confetti */
-  @keyframes confettiDrop {
-    0% { transform: translateY(-10px) rotate(0deg); opacity: 1; }
-    100% { transform: translateY(100vh) rotate(720deg); opacity: 0; }
+  .complete-banner h2 {
+    font-family: 'Instrument Serif', serif;
+    font-size: 1.6rem;
+    font-style: italic;
+    margin-bottom: 8px;
   }
-  .confetti-piece {
-    position: fixed;
-    width: 8px; height: 8px;
-    border-radius: 2px;
-    animation: confettiDrop 2s ease forwards;
-    pointer-events: none;
-    z-index: 999;
-  }
+
+  .complete-banner p { font-size: 14px; opacity: 0.85; }
 
   @keyframes fadeUp {
-    from { opacity: 0; transform: translateY(18px); }
+    from { opacity: 0; transform: translateY(14px); }
     to { opacity: 1; transform: translateY(0); }
   }
-
-  /* Floating diya animation */
-  @keyframes flicker {
-    0%, 100% { opacity: 1; transform: scale(1); }
-    50% { opacity: 0.85; transform: scale(1.05); }
-  }
-  .flicker { display: inline-block; animation: flicker 2s ease-in-out infinite; }
 </style>
 </head>
 <body>
 
-<div class="temple-border"></div>
+<div class="top-bar"></div>
 
 <div class="container">
   <header>
-    <p class="telugu-title">ఆంధ్రప్రదేశ్ · Telugu Hindu Family</p>
-    <p class="telugu-sub">Southern Andhra Pradesh · Multi-Generational Traditions</p>
-    <div class="diyas"><span class="flicker">🪔</span> <span class="flicker" style="animation-delay:0.3s">🌺</span> <span class="flicker" style="animation-delay:0.6s">🪔</span></div>
-    <h1>Our Family <em>Aacharam</em><br>& Daily Rituals</h1>
-    <p class="header-desc">The sacred customs of a Southern Andhra household — from morning kolam to evening deepam, woven through every generation.</p>
+    <p class="eyebrow">3 Days Per Week · Alternate A & B</p>
+    <h1>Home <em>Longevity</em><br>Tendon & Arm Strength</h1>
+    <p class="header-desc">Pack and unpack setup. Standing and weighted work first, then floor work. Three-second lowering on every movement. Progress when reps feel easy.</p>
   </header>
 
-  <div class="filters">
-    <button class="filter-btn active" onclick="filter('all',event)">అన్నీ · All</button>
-    <button class="filter-btn" onclick="filter('daily',event)">Daily · రోజువారీ</button>
-    <button class="filter-btn" onclick="filter('weekly',event)">Weekly · వారానికి</button>
-    <button class="filter-btn" onclick="filter('pooja',event)">Pooja · పూజ</button>
-    <button class="filter-btn" onclick="filter('kitchen',event)">Kitchen · వంటిల్లు</button>
-    <button class="filter-btn" onclick="filter('elders',event)">Elders · పెద్దలు</button>
-  </div>
-
-  <div class="progress-wrap">
-    <div class="progress-icon">🏮</div>
-    <div class="progress-text">
-      <div class="progress-label">Traditions Adopted · ఆచారాలు పాటించేవి</div>
-      <div class="progress-bar"><div class="progress-fill" id="progressFill" style="width:0%"></div></div>
+  <div class="params">
+    <div class="param-card">
+      <div class="param-label">Frequency</div>
+      <div class="param-value">3 sessions per week — alternate Workout A and Workout B</div>
     </div>
-    <span class="progress-count" id="progressCount">0 / 20</span>
+    <div class="param-card">
+      <div class="param-label">Format</div>
+      <div class="param-value">All standing/weighted movements first. Clear weights, then finish on the floor.</div>
+    </div>
+    <div class="param-card">
+      <div class="param-label">Tempo</div>
+      <div class="param-value">3-second lowering phase (eccentric control) on all movements</div>
+    </div>
+    <div class="param-card">
+      <div class="param-label">Progression</div>
+      <div class="param-value">When an exercise feels easy at its rep range, move up to the next dumbbell increment</div>
+    </div>
   </div>
 
-  <div id="traditionsContainer"></div>
+  <div class="workout-nav">
+    <button class="workout-btn" id="btnA" onclick="selectWorkout('A')">
+      <span class="btn-id">Workout A</span>
+      <span class="btn-title">Postural Pillars, Hips & Biceps</span>
+    </button>
+    <button class="workout-btn" id="btnB" onclick="selectWorkout('B')">
+      <span class="btn-id">Workout B</span>
+      <span class="btn-title">Balance, Knee Tracking, Triceps & Shoulders</span>
+    </button>
+  </div>
 
-  <div class="celebrate-banner" id="celebrateBanner">
-    🪔 శుభమస్తు — Your home is a temple of tradition. May your family's light burn bright for generations! 🪔
+  <div class="stats-row">
+    <div class="stat-card">
+      <div class="stat-icon">📋</div>
+      <div class="stat-body">
+        <div class="stat-label">Today's Session</div>
+        <div class="stat-value" id="sessionProgress">0 / 0 sets</div>
+        <div class="progress-bar"><div class="progress-fill" id="sessionFill" style="width:0%"></div></div>
+      </div>
+    </div>
+    <div class="stat-card schedule">
+      <div class="stat-icon">🗓</div>
+      <div class="stat-body">
+        <div class="stat-label">Suggested Next</div>
+        <div class="stat-value" id="nextWorkout">Workout A</div>
+        <div class="stat-sub" id="sessionsCompleted">0 sessions completed</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="setup-banner" id="setupBanner"></div>
+
+  <div id="workoutContent"></div>
+
+  <div class="actions">
+    <button class="action-btn primary" onclick="completeSession()">Mark Session Complete</button>
+    <button class="action-btn secondary" onclick="resetSession()">Reset Today's Sets</button>
+  </div>
+
+  <div class="complete-banner" id="completeBanner">
+    <h2>Session complete — well done.</h2>
+    <p>Pack everything away. Rest, hydrate, and let tendons recover before your next session.</p>
   </div>
 </div>
 
 <script>
-const traditions = [
-  // ─── DAILY ────────────────────────────────────────────────────────────────
-  {
-    id:1, freq:'daily', icon:'🌅', filters:['all','daily','pooja'],
-    title:'Suprabhata Pooja', telugu:'సుప్రభాత పూజ',
-    tag:'Morning Ritual',
-    desc:'Before sunrise, the elder woman of the house wakes first, lights the lamp at the pooja room, rings the bell, and chants Suprabhata slokas. Children join after bath. The day does not start without this.'
-  },
-  {
-    id:2, freq:'daily', icon:'🌸', filters:['all','daily'],
-    title:'Kolam at the Threshold', telugu:'ముగ్గు',
-    tag:'Women\'s Tradition',
-    desc:'Every morning, the women of the household draw a fresh kolam at the front door with rice flour. On festival days it is expanded with colour. Children learn the basic dots-and-lines patterns from grandmothers.'
-  },
-  {
-    id:3, freq:'daily', icon:'🪔', filters:['all','daily','pooja'],
-    title:'Evening Deepam — Sandhyavandanam', telugu:'సంధ్యా దీపం',
-    tag:'All Generations',
-    desc:'At dusk, a ghee lamp is lit in the pooja room and at the tulsi kota. The family gathers to sing "Deepam Jyoti" and offer the day\'s last prayer. Elders lead; grandchildren hold the lamp.'
-  },
-  {
-    id:4, freq:'daily', icon:'🌿', filters:['all','daily','pooja'],
-    title:'Tulasi Pooja', telugu:'తులసి పూజ',
-    tag:'Sacred Plant Ritual',
-    desc:'The Tulasi plant (Holy Basil) in the courtyard is watered and worshipped each morning by the women of the house. Married women offer kumkum, haldi, and a small flower garland while circumambulating it.'
-  },
-  {
-    id:5, freq:'daily', icon:'🍚', filters:['all','daily','kitchen'],
-    title:'Naivedyam Before First Meal', telugu:'నైవేద్యం',
-    tag:'Kitchen Tradition',
-    desc:'The first portion of every cooked meal is offered to God in the pooja room (Naivedyam) before anyone eats. Grandmothers set a small banana leaf with rice and curry. Only then does the family sit to eat.'
-  },
-  {
-    id:6, freq:'daily', icon:'👵', filters:['all','daily','elders'],
-    title:'Aasheervadham — Elder\'s Blessing', telugu:'ఆశీర్వాదం',
-    tag:'Intergenerational',
-    desc:'Children touch the feet of grandparents and parents every morning and before leaving the house. Elders place their hand on the child\'s head and bless them. A tradition non-negotiable in a Southern Andhra home.'
-  },
-  {
-    id:7, freq:'daily', icon:'📿', filters:['all','daily','pooja'],
-    title:'Sloka Recitation at Dusk', telugu:'శ్లోకాలు',
-    tag:'All Children',
-    desc:'Children sit with grandparents and recite slokas — Vishnu Sahasranamam, Hanuman Chalisa, or Lalitha Sahasranamam stanzas — for 10-15 minutes before dinner. This is how the oral tradition is preserved.'
-  },
+const STORAGE_KEY = 'longevity_workout_v1';
 
-  // ─── WEEKLY ───────────────────────────────────────────────────────────────
-  {
-    id:8, freq:'weekly', icon:'🌕', filters:['all','weekly','pooja'],
-    title:'Ekadashi Vrat', telugu:'ఏకాదశి వ్రతం',
-    tag:'Twice Monthly',
-    desc:'On the 11th day of each lunar fortnight, elders observe fasting (or a fruit/milk diet). The family reads Vishnu Puranam together in the evening. Children participate by staying vegetarian and listening to stories of Lord Vishnu.'
+const workouts = {
+  A: {
+    id: 'A',
+    title: 'Postural Pillars, Hips & Biceps',
+    setup: 'Pull out 1× heavy dumbbell (for squats), 2× medium dumbbells (for RDLs/Curls), and your heaviest weights for carries.',
+    phases: [
+      {
+        label: 'Standing & Weighted',
+        teardown: 'Pack away heavy dumbbells; training block complete.',
+        exercises: [
+          {
+            id: 'a1',
+            name: 'Wall Tibialis Raises',
+            target: 'Ankle / Shin Prep',
+            sets: 2,
+            prescription: '20 reps',
+            equipment: 'Bodyweight',
+            notes: 'Stand with your back against a wall. Raise toes toward shins, control the lowering phase.'
+          },
+          {
+            id: 'a2',
+            name: 'Dumbbell Romanian Deadlifts',
+            target: 'Hamstring & Gluteal Tendons',
+            sets: 3,
+            prescription: '10 reps',
+            equipment: '2× medium-to-heavy DBs (10–15 kg each)',
+            notes: 'Hinge at the hips, keep a soft knee bend, and lower dumbbells along your legs with a 3-second eccentric.'
+          },
+          {
+            id: 'a3',
+            name: 'Dumbbell Goblet Box Squats',
+            target: 'Knee Tracking & Patellar Tendon',
+            sets: 3,
+            prescription: '10 reps',
+            equipment: '1× heavy DB (12–20 kg) at chest',
+            notes: 'Hold the dumbbell vertically at your chest. Squat to a chair or box, knees tracking over toes.'
+          },
+          {
+            id: 'a4',
+            name: 'Seated Dumbbell Hammer Curls',
+            target: 'Biceps & Forearm Grip',
+            sets: 3,
+            prescription: '10–12 reps',
+            equipment: 'Medium dumbbells',
+            notes: 'Sit fully supported with back against a bench or chair. Control the descent — no swinging.'
+          },
+          {
+            id: 'a5',
+            name: 'Dumbbell Farmer\'s Carries',
+            target: 'Global Posture Finisher',
+            sets: 3,
+            prescription: '60 sec walk',
+            equipment: 'Heaviest matching dumbbells',
+            notes: 'Stand tall, shoulders back and down. Walk with controlled steps for the full duration.'
+          }
+        ]
+      }
+    ]
   },
-  {
-    id:9, freq:'weekly', icon:'🐒', filters:['all','weekly','pooja'],
-    title:'Saturday Hanuman Pooja', telugu:'శనివారం హనుమాన్ పూజ',
-    tag:'Weekly Ritual',
-    desc:'Saturday is Hanuman\'s day. The family visits the nearby Anjaneya temple or performs Hanuman Chalisa recitation at home. Elders distribute vada, banana prasadam to neighbourhood children.'
-  },
-  {
-    id:10, freq:'weekly', icon:'🌼', filters:['all','weekly','pooja'],
-    title:'Friday Lakshmi Pooja', telugu:'శుక్రవారం లక్ష్మి పూజ',
-    tag:'Women\'s Ritual',
-    desc:'Friday is sacred to Goddess Lakshmi. Married women perform Vara Lakshmi pooja — decorating the kalasha, offering turmeric garlands, reciting Lakshmi Ashtottaram. Daughters are taught each step by their mothers.'
-  },
-  {
-    id:11, freq:'weekly', icon:'🍛', filters:['all','weekly','kitchen'],
-    title:'Sunday Inti Vanta — Family Cook', telugu:'ఇంటి వంట',
-    tag:'Kitchen Tradition',
-    desc:'Sunday is the day for elaborate cooking together. Grandmother supervises pesarattu, pulihora, or gongura pachadi. Daughters-in-law learn; grandchildren grind the chutney on the old ammikallu (stone grinder).'
-  },
-  {
-    id:12, freq:'weekly', icon:'👴', filters:['all','weekly','elders'],
-    title:'Grandfather\'s Story Hour', telugu:'తాతయ్య కథలు',
-    tag:'Oral Tradition',
-    desc:'After Sunday lunch, the grandfather gathers grandchildren and tells one Panchatantra, Ramayana, or Mahabharata story from memory. Children ask questions; the story is discussed across generations at the table.'
-  },
-  {
-    id:13, freq:'weekly', icon:'🌾', filters:['all','weekly','elders'],
-    title:'Weekly Astrology Reading', telugu:'వారఫలం',
-    tag:'Elder\'s Tradition',
-    desc:'Elders read the weekly horoscope (varaphalam) from a Telugu almanac (panchangam) on Sunday morning. They explain auspicious times for the week. Children learn the concept of muhurtham and its significance.'
-  },
-  {
-    id:14, freq:'weekly', icon:'🛕', filters:['all','weekly','pooja'],
-    title:'Temple Visit — Devasthanam', telugu:'దేవస్థానం దర్శనం',
-    tag:'Family Outing',
-    desc:'The whole family walks or drives to the kula deivam (family deity temple) weekly — typically on Tuesday or Friday. Each member carries a coconut or flowers. Elders explain the significance of each deity to grandchildren.'
-  },
-  {
-    id:15, freq:'weekly', icon:'🎶', filters:['all','weekly','elders'],
-    title:'Carnatic Sangeetham Session', telugu:'కర్నాటక సంగీతం',
-    tag:'Cultural Arts',
-    desc:'One evening a week, a grandmother or elder who knows Carnatic music sings Thyagaraja keertanas or Annamacharya sankeertanas. Children hum along; teenagers are enrolled in classes to continue the chain.'
-  },
+  B: {
+    id: 'B',
+    title: 'Balance, Knee Tracking, Triceps & Shoulders',
+    setup: 'Pull out light-to-medium dumbbells (for split squats, raises, and skull crushers) and your resistance bands.',
+    phases: [
+      {
+        label: 'Standing & Weighted',
+        teardown: 'Pack away all dumbbells. Transition exclusively to the floor mat for final band work.',
+        exercises: [
+          {
+            id: 'b1',
+            name: 'Eyes-Closed Single-Leg Balance',
+            target: 'Ankle Reflexes',
+            sets: 3,
+            prescription: '30 sec / leg',
+            setLabels: ['L1','R1','L2','R2','L3','R3'],
+            equipment: 'Bodyweight · hard floor',
+            notes: 'Stand on one leg, eyes closed, on a firm surface. Complete left then right for each round.'
+          },
+          {
+            id: 'b2',
+            name: 'Lunge with Heel Raise',
+            target: 'Physio Core — Soleus focus',
+            sets: 3,
+            prescription: '10 reps / side',
+            setLabels: ['L1','R1','L2','R2','L3','R3'],
+            equipment: '5 kg KB or light dumbbells',
+            notes: 'Lunge forward, raise the back heel at the bottom. Scale load as needed while keeping form strict.'
+          },
+          {
+            id: 'b3',
+            name: 'Seated Dumbbell Lateral Raises',
+            target: 'Shoulder & Posture Width',
+            sets: 3,
+            prescription: '12 reps',
+            equipment: 'Light DBs (3–5 kg)',
+            notes: 'Use light weights to maintain strict form. Raise to shoulder height with controlled lowering.'
+          },
+          {
+            id: 'b4',
+            name: 'Floor Dumbbell Skull Crushers',
+            target: 'Triceps & Elbow Armor',
+            sets: 3,
+            prescription: '10 reps',
+            equipment: 'Light-to-medium dumbbells · mat',
+            notes: 'Lie flat on your back. Keep elbows fixed in place — only the forearms move.'
+          }
+        ]
+      },
+      {
+        label: 'Floor Work',
+        teardown: 'Return bands to storage bin. Teardown complete.',
+        exercises: [
+          {
+            id: 'b5',
+            name: 'Resisted Hip Abduction in Side Lying',
+            target: 'Physio Core — Pelvic Anchor',
+            sets: 3,
+            prescription: '10–12 reps / side',
+            setLabels: ['L1','R1','L2','R2','L3','R3'],
+            equipment: 'Resistance band looped around ankles',
+            notes: 'Lie on your side, band secure around ankles. Lift top leg against band resistance.'
+          },
+          {
+            id: 'b6',
+            name: 'Single-Leg Floor Bridge',
+            target: 'Physio Core — Posterior Chain',
+            sets: 3,
+            prescription: '6 reps / side · 3 sec hold',
+            setLabels: ['L1','R1','L2','R2','L3','R3'],
+            equipment: 'Bodyweight · mat',
+            notes: 'Drive through the heel, lift hips, hold 3 seconds at the top. Alternate sides each round.'
+          }
+        ]
+      }
+    ]
+  }
+};
 
-  // ─── SPECIAL WEEKLY/PERIODIC ──────────────────────────────────────────────
-  {
-    id:16, freq:'monthly', icon:'🌙', filters:['all','weekly','pooja'],
-    title:'Amavasya Pitru Tharpanam', telugu:'అమావాస్య తర్పణం',
-    tag:'Ancestral Ritual',
-    desc:'On the new moon (Amavasya), male elders perform tharpanam — offering of sesame seeds and water to ancestors at the river or at home. Grandchildren watch solemnly; the names of departed family members are spoken aloud.'
-  },
-  {
-    id:17, freq:'monthly', icon:'🥥', filters:['all','weekly','kitchen'],
-    title:'Sathyanarayana Swamy Katha', telugu:'సత్యనారాయణ స్వామి కథ',
-    tag:'Household Pooja',
-    desc:'Performed on the Pournami (full moon) or on auspicious occasions. Priest recites the Katha while all family members sit and listen. Panchamrutam and Prasadam are shared with neighbours. Children learn to tie the banana columns and arrange flowers.'
-  },
-  {
-    id:18, freq:'weekly', icon:'💛', filters:['all','weekly','kitchen'],
-    title:'Pasupu-Kumkuma Exchange', telugu:'పసుపు కుంకుమ',
-    tag:'Women\'s Bond',
-    desc:'Married women of the household and neighbourhood exchange turmeric and kumkum on auspicious weekday evenings. Elder women bless younger ones. A deeply social tradition that builds community and teaches daughters its sacred meaning.'
-  },
-  {
-    id:19, freq:'daily', icon:'📖', filters:['all','daily','elders'],
-    title:'Ramayanam Parayanam', telugu:'రామాయణ పారాయణం',
-    tag:'Sacred Reading',
-    desc:'The Valmiki Ramayanam or Molla Ramayanam is read aloud for 15 minutes each evening by the eldest family member. During Karthika masam (Nov–Dec), this becomes a daily non-negotiable ritual.'
-  },
-  {
-    id:20, freq:'weekly', icon:'🌺', filters:['all','weekly','pooja'],
-    title:'Garland-Making Together', telugu:'పూల మాల కట్టడం',
-    tag:'Intergenerational',
-    desc:'On pooja days, all women and children sit together to string fresh flowers — jasmine (malle), rose, or chrysanthemum — for the deity. Elders teach the pattern; children learn patience, dexterity, and devotion simultaneously.'
-  },
-];
+let state = loadState();
+let activeWorkout = state.activeWorkout || suggestWorkout();
 
-const festivals = [
-  { icon:'🌾', name:'Sankranti', telugu:'సంక్రాంతి', desc:'The harvest festival of Andhra. Bhogi fires, Haridasu singing, Gobbi games, Kite flying, and Pongal cooking in earthen pots. Elders lead the Bhogi ritual burning old things for renewal.' },
-  { icon:'🌸', name:'Ugadi', telugu:'ఉగాది', desc:'Telugu New Year. The panchangam is read aloud by elders. Ugadi Pachadi is made with six tastes (rasa shadayas) — a metaphor for life\'s mix of joy and sorrow. New clothes for all.' },
-  { icon:'🐘', name:'Ganesh Chaturthi', telugu:'వినాయక చవితి', desc:'Vinayaka idols are installed at home for 1.5 days. Modak and kudumulu are offered. Children carry the idol to the water immersion with procession. Families fast and celebrate together.' },
-  { icon:'🌟', name:'Dasara', telugu:'దసరా', desc:'Saraswati Pooja: books, tools, and instruments are arranged for pooja. Vijayadasami: new ventures begin on this day. Grandmothers apply kumkum to every tool in the house. Children start new learning.' },
-  { icon:'🪔', name:'Deepavali', telugu:'దీపావళి', desc:'The family makes Deepavali Murukku and Laddu at home. Elders wake children before dawn for Abhyanga Snanam (oil bath). Every room and threshold is lit with earthen diyas from dusk to midnight.' },
-  { icon:'🙏', name:'Sathyanarayana Swamy Pooja', telugu:'సత్యనారాయణ స్వామి పూజ', desc:'Performed on auspicious occasions: new home, family milestones, recovery from illness. The whole extended family gathers. Panchamrutam prasadam is distributed. A priest reads the Katha in full.' },
-];
-
-let activeFilter = 'all';
-let checked = new Set(JSON.parse(localStorage.getItem('telugu_traditions') || '[]'));
-
-function save() { localStorage.setItem('telugu_traditions', JSON.stringify([...checked])); }
-
-function updateProgress() {
-  const total = traditions.length;
-  const done = checked.size;
-  document.getElementById('progressFill').style.width = (done/total*100) + '%';
-  document.getElementById('progressCount').textContent = `${done} / ${total}`;
-  if (done === total) document.getElementById('celebrateBanner').style.display = 'block';
-}
-
-function confetti(x, y) {
-  const colors = ['#e8701a','#d4a017','#c0392b','#2e6b3e','#f5c842','#e8a0b0'];
-  for (let i = 0; i < 14; i++) {
-    const el = document.createElement('div');
-    el.className = 'confetti-piece';
-    const shapes = ['50%','0','30%'];
-    el.style.cssText = `left:${x+(Math.random()-.5)*100}px;top:${y}px;background:${colors[Math.floor(Math.random()*colors.length)]};border-radius:${shapes[Math.floor(Math.random()*3)]};animation-delay:${Math.random()*0.3}s;animation-duration:${1.4+Math.random()}s`;
-    document.body.appendChild(el);
-    setTimeout(() => el.remove(), 2500);
+function loadState() {
+  try {
+    return JSON.parse(localStorage.getItem(STORAGE_KEY)) || defaultState();
+  } catch {
+    return defaultState();
   }
 }
 
-function toggleCard(id, event) {
-  event.stopPropagation();
-  if (checked.has(id)) checked.delete(id);
-  else { checked.add(id); confetti(event.clientX, event.clientY); }
-  save(); render();
+function defaultState() {
+  return {
+    activeWorkout: null,
+    completedSets: {},
+    sessionsCompleted: 0,
+    lastCompletedWorkout: null
+  };
 }
 
-function filter(f, event) {
-  activeFilter = f;
-  document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
-  if (event && event.target) event.target.classList.add('active');
+function saveState() {
+  state.activeWorkout = activeWorkout;
+  localStorage.setItem(STORAGE_KEY, JSON.stringify(state));
+}
+
+function suggestWorkout() {
+  if (!state.lastCompletedWorkout) return 'A';
+  return state.lastCompletedWorkout === 'A' ? 'B' : 'A';
+}
+
+function allSetKeys(workoutId) {
+  const w = workouts[workoutId];
+  const keys = [];
+  w.phases.forEach(phase => {
+    phase.exercises.forEach(ex => {
+      const count = ex.setLabels ? ex.setLabels.length : ex.sets;
+      for (let i = 0; i < count; i++) {
+        keys.push(`${workoutId}:${ex.id}:${i}`);
+      }
+    });
+  });
+  return keys;
+}
+
+function totalSets(workoutId) {
+  return allSetKeys(workoutId).length;
+}
+
+function completedSetsFor(workoutId) {
+  return allSetKeys(workoutId).filter(k => state.completedSets[k]).length;
+}
+
+function selectWorkout(id) {
+  activeWorkout = id;
+  saveState();
   render();
 }
 
-function renderFestivals() {
+function toggleSet(key) {
+  if (state.completedSets[key]) delete state.completedSets[key];
+  else state.completedSets[key] = true;
+  saveState();
+  render();
+}
+
+function resetSession() {
+  const prefix = `${activeWorkout}:`;
+  Object.keys(state.completedSets).forEach(k => {
+    if (k.startsWith(prefix)) delete state.completedSets[k];
+  });
+  document.getElementById('completeBanner').style.display = 'none';
+  saveState();
+  render();
+}
+
+function completeSession() {
+  const total = totalSets(activeWorkout);
+  const done = completedSetsFor(activeWorkout);
+  if (done < total) {
+    const remaining = total - done;
+    if (!confirm(`${remaining} set${remaining === 1 ? '' : 's'} still unchecked. Mark session complete anyway?`)) return;
+  }
+  state.sessionsCompleted += 1;
+  state.lastCompletedWorkout = activeWorkout;
+  Object.keys(state.completedSets).forEach(k => {
+    if (k.startsWith(`${activeWorkout}:`)) delete state.completedSets[k];
+  });
+  activeWorkout = suggestWorkout();
+  document.getElementById('completeBanner').style.display = 'block';
+  saveState();
+  render();
+}
+
+function renderWorkoutButtons() {
+  document.getElementById('btnA').className = 'workout-btn' + (activeWorkout === 'A' ? ' active-a' : '');
+  document.getElementById('btnB').className = 'workout-btn' + (activeWorkout === 'B' ? ' active-b' : '');
+}
+
+function renderStats() {
+  const total = totalSets(activeWorkout);
+  const done = completedSetsFor(activeWorkout);
+  document.getElementById('sessionProgress').textContent = `${done} / ${total} sets`;
+  document.getElementById('sessionFill').style.width = total ? (done / total * 100) + '%' : '0%';
+
+  const next = suggestWorkout();
+  document.getElementById('nextWorkout').textContent = `Workout ${next}`;
+  document.getElementById('sessionsCompleted').textContent =
+    `${state.sessionsCompleted} session${state.sessionsCompleted === 1 ? '' : 's'} completed`;
+}
+
+function renderSetup() {
+  const w = workouts[activeWorkout];
+  document.getElementById('setupBanner').innerHTML = `
+    <h3>Target Setup · Workout ${w.id}</h3>
+    <p>${w.setup}</p>`;
+}
+
+function renderExercise(ex, index, workoutId) {
+  const setCount = ex.setLabels ? ex.setLabels.length : ex.sets;
+  const setKeys = [];
+  for (let i = 0; i < setCount; i++) setKeys.push(`${workoutId}:${ex.id}:${i}`);
+
+  const allDone = setKeys.every(k => state.completedSets[k]);
+  const labels = ex.setLabels || Array.from({ length: ex.sets }, (_, i) => `Set ${i + 1}`);
+
+  const setsHTML = labels.map((label, i) => {
+    const key = setKeys[i];
+    const done = !!state.completedSets[key];
+    return `<button class="set-btn ${done ? 'done' : ''}" onclick="toggleSet('${key}')">${done ? '✓ ' : ''}${label}</button>`;
+  }).join('');
+
   return `
-    <div class="festival-section">
-      <div class="festival-header">
-        <h2>పండుగలు — The Great Festivals</h2>
-        <p>Six Sacred Celebrations of Southern Andhra</p>
+    <div class="exercise ${allDone ? 'done' : ''}" style="animation-delay:${index * 0.04}s">
+      <div class="exercise-top">
+        <div>
+          <div class="exercise-num">${String(index).padStart(2, '0')}</div>
+          <div class="exercise-name">${ex.name}</div>
+          <div class="exercise-target">${ex.target}</div>
+        </div>
       </div>
-      <div class="festival-grid">
-        ${festivals.map(f => `
-          <div class="festival-card">
-            <div class="fest-icon">${f.icon}</div>
-            <div class="fest-name">${f.name}</div>
-            <div class="fest-telugu">${f.telugu}</div>
-            <div class="fest-desc">${f.desc}</div>
-          </div>
-        `).join('')}
+      <div class="exercise-meta">
+        <span class="meta-pill">${ex.sets}× ${ex.prescription}</span>
+        <span class="meta-pill">${ex.equipment}</span>
+        <span class="meta-pill tempo">3s lowering</span>
+      </div>
+      <div class="exercise-notes">${ex.notes}</div>
+      <div class="sets-row">
+        <span class="sets-label">Sets</span>
+        ${setsHTML}
       </div>
     </div>`;
+}
+
+function renderWorkout() {
+  const w = workouts[activeWorkout];
+  let html = '';
+  let exerciseIndex = 1;
+
+  w.phases.forEach((phase, pi) => {
+    const phaseClass = activeWorkout === 'B' && pi === 1 ? ' b' : '';
+    html += `
+      <div class="phase-header${phaseClass}">
+        <span class="phase-badge">Phase ${pi + 1}</span>
+        <span class="phase-title">${phase.label}</span>
+      </div>
+      <div class="exercise-list">`;
+
+    phase.exercises.forEach(ex => {
+      html += renderExercise(ex, exerciseIndex++, activeWorkout);
+    });
+
+    html += `</div>
+      <div class="teardown">
+        <span class="teardown-icon">📦</span>
+        <div><strong>Teardown</strong>${phase.teardown}</div>
+      </div>`;
+  });
+
+  document.getElementById('workoutContent').innerHTML = html;
 }
 
 function render() {
-  const container = document.getElementById('traditionsContainer');
-  const visible = traditions.filter(t => t.filters.includes(activeFilter));
+  renderWorkoutButtons();
+  renderStats();
+  renderSetup();
+  renderWorkout();
 
-  const daily = visible.filter(t => t.freq === 'daily');
-  const weekly = visible.filter(t => t.freq === 'weekly');
-  const monthly = visible.filter(t => t.freq === 'monthly');
-
-  let html = '';
-
-  if (daily.length) {
-    html += `<div class="section-label"><span class="s-icon">🌅</span> Daily Rituals · రోజువారీ ఆచారాలు</div><div class="grid">`;
-    daily.forEach((t, i) => {
-      const done = checked.has(t.id);
-      html += cardHTML(t, done, i);
-    });
-    html += '</div>';
+  const total = totalSets(activeWorkout);
+  const done = completedSetsFor(activeWorkout);
+  if (done === total && total > 0) {
+    document.getElementById('completeBanner').style.display = 'block';
   }
-
-  if (weekly.length) {
-    html += `<div class="section-label"><span class="s-icon">🛕</span> Weekly Traditions · వారానికొకసారి</div><div class="grid">`;
-    weekly.forEach((t, i) => { html += cardHTML(t, checked.has(t.id), i); });
-    html += '</div>';
-  }
-
-  if (monthly.length) {
-    html += `<div class="section-label"><span class="s-icon">🌕</span> Monthly Rituals · నెలవారీ</div><div class="grid">`;
-    monthly.forEach((t, i) => { html += cardHTML(t, checked.has(t.id), i); });
-    html += '</div>';
-  }
-
-  if (activeFilter === 'all' || activeFilter === 'pooja') {
-    html += renderFestivals();
-  }
-
-  container.innerHTML = html;
-  updateProgress();
-}
-
-function cardHTML(t, done, i) {
-  return `
-    <div class="card ${done ? 'done' : ''}" onclick="toggleCard(${t.id}, event)" style="animation-delay:${i*0.06}s">
-      <div class="card-header">
-        <span class="card-icon">${t.icon}</span>
-        <div class="check-circle">${done ? '✓' : ''}</div>
-      </div>
-      <span class="card-freq">${t.freq}</span>
-      <div class="card-title">${t.title}</div>
-      <div class="card-telugu">${t.telugu}</div>
-      <div class="card-desc">${t.desc}</div>
-      <span class="card-tag">${t.tag}</span>
-    </div>`;
 }
 
 render();
