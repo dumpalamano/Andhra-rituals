@@ -1,32 +1,40 @@
-# 🪔 Telugu Family Traditions Tracker
+# KAIROS — ACAMS Hero Film
 
-An interactive tracker of daily, weekly, and festival traditions for a **multi-generational South Indian Telugu Hindu family** from Southern Andhra Pradesh.
+A 3:00 cinematic motion-graphics film for a 16:9 LED booth loop, produced from the *ACAMS Hero Film / Kairos* shooting script.
 
-## Features
+**Kairos — Connected Financial Crime Operations**
 
-- ✅ 20 authentic traditions — daily rituals, weekly customs, monthly rituals
-- 🎉 Click any card to mark a tradition as adopted (with confetti!)
-- 📊 Progress bar tracking how many traditions your family has embraced
-- 🔍 Filter by: Daily, Weekly, Pooja, Kitchen, Elders
-- 🌺 Festival panel covering Sankranti, Ugadi, Ganesh Chaturthi, Dasara, Deepavali & Sathyanarayana Swamy Pooja
-- 💾 Progress saved in browser localStorage
-- 📱 Fully responsive — works on mobile and desktop
+Style: Bloomberg / Financial Times / Apple keynote / Formula One broadcast graphics.  
+Palette: midnight navy, deep black, electric blue, white, gold, amber, green, red.
 
-## Traditions Included
+## Watch
 
-**Daily (రోజువారీ)**
-- Suprabhata Pooja · Kolam · Tulasi Pooja · Naivedyam · Evening Deepam · Aasheervadham · Sloka Recitation · Ramayanam Parayanam
+Open [`index.html`](index.html) in a browser and press **Play Film**.  
+The finished linear cut is [`acams_kairos_hero_film.mp4`](acams_kairos_hero_film.mp4) (1920×1080, ~3:10 including the silent booth loop).
 
-**Weekly (వారానికొకసారి)**
-- Friday Lakshmi Pooja · Saturday Hanuman Pooja · Sunday Family Cook · Grandfather's Stories · Panchangam Reading · Temple Visit · Carnatic Sangeetham · Garland Making · Pasupu-Kumkuma
+## Structure
 
-**Monthly (నెలవారీ)**
-- Ekadashi Vrat · Amavasya Tharpanam · Sathyanarayana Swamy Katha
+| Time | Scene |
+| --- | --- |
+| 00:00–00:20 | The world has changed |
+| 00:20–00:45 | Fragmented operations |
+| 00:45–01:05 | The FRAML problem |
+| 01:05–01:30 | Introducing Kairos |
+| 01:30–01:55 | The operating room |
+| 01:55–02:15 | Inside Kairos |
+| 02:15–02:35 | FRAML enabled by Kairos |
+| 02:35–02:50 | The connected lifecycle |
+| 02:50–03:00 | Future state |
+| 03:00–03:10 | Silent booth loop |
 
-## Live Site
+The core visual is the script’s mandated transition: **fragmented financial-crime functions → a single risk view**.
 
-🌐 [View on GitHub Pages](https://YOUR-USERNAME.github.io/telugu-family-traditions/)
+## Reproduce
 
-## Usage
+```bash
+python3 scripts/generate_music.py
+python3 scripts/generate_audio.py
+python3 scripts/render_film.py
+```
 
-Simply open `index.html` in a browser — no build steps, no dependencies. All fonts load from Google Fonts.
+Requires `ffmpeg`, `ffprobe`, Python 3, `edge-tts`, `numpy`, and `pillow`.

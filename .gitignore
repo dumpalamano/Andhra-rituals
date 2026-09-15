@@ -1,0 +1,5 @@
+build/
+assets/audio/*.wav
+assets/audio/vo0*.mp3
+assets/audio/voiceover_raw.wav
+.DS_Store
