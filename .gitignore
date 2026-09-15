@@ -2,4 +2,5 @@ build/
 assets/audio/*.wav
 assets/audio/vo0*.mp3
 assets/audio/voiceover_raw.wav
+scripts/__pycache__/
 .DS_Store
