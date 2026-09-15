@@ -396,13 +396,7 @@ function render(t) {
     if (html) ostEl.classList.add("fade");
     currentOst = html;
   }
-  const showStack = t >= 117.2 && t < 134.2;
-  stack.classList.toggle("show", showStack);
-  if (showStack) {
-    stack.querySelectorAll(".layer").forEach(el => {
-      el.classList.toggle("on", t >= parseFloat(el.dataset.at));
-    });
-  }
+  stack.classList.remove("show");
   fill.style.width = `${(t / TOTAL) * 100}%`;
   clock.textContent = `${fmt(t)} / 03:10`;
 }

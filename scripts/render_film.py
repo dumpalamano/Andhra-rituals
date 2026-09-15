@@ -107,18 +107,7 @@ Format: Layer, Start, End, Style, Name, MarginL, MarginR, MarginV, Effect, Text
     d(107.0, 111.0, "Sub", "The environment determines outcomes", r"{\fad(300,250)}")
     d(111.2, 116.4, "Hero", "KAIROS IS THE OPERATING ROOM", r"{\fad(300,400)\fsp5}")
 
-    # Scene 6 architecture labels — stacked
-    layers = [
-        (117.5, 133.8, 250, "AI-NATIVE OPERATIONS", "Agents  ·  illustrative, varies by client"),
-        (118.4, 133.8, 390, "DOMAIN INTELLIGENCE", "Domain Harness"),
-        (119.3, 133.8, 530, "ORGANIZATIONAL CONTEXT", "Intelligent Context Framework"),
-        (120.2, 133.8, 670, "OPERATIONS INTELLIGENCE", "Sensors"),
-        (121.1, 133.8, 810, "RAW DATA  &  TRANSACTIONS", "Systems of Record  ·  illustrative"),
-    ]
-    for i, (a, b, y, title, sub) in enumerate(layers):
-        fade = r"{\fad(350,400)\pos(960,%d)}" % y
-        d(a, b, "Stack", title, fade)
-        d(a + 0.15, b, "StackSub", sub, r"{\fad(350,400)\pos(960,%d)}" % (y + 36))
+    # Scene 6 uses the architecture plate's own labels.
 
     # Scene 7
     d(140.0, 146.5, "Hero", "CRIMINALS DON'T ORGANIZE BY DEPARTMENT", r"{\fad(300,250)\fsp2\fs48}")
